@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "l1",
+      "camelcase": "L1",
+      "title": "L1",
+      "scope": "source.l1",
+      "file-types": [
+        "l1"
+      ],
+      "injection-regex": "^l1$",
+      "class-name": "TreeSitterL1"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "GPLv3",
+    "description": "Tree sitter parser for the L1 language for the compiler lab of KIT.",
+    "authors": [
+      {
+        "name": "TornaxO7",
+        "email": "tornax@pm.me",
+        "url": "https://tornaxo7.de/"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/TornaxO7/tree-sitter-l1"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
