@@ -7,13 +7,6 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-const WHITESPACES = repeat(
-  choice(
-    " ",
-    "\t"
-  )
-)
-
 module.exports = grammar({
   name: "l1",
 
