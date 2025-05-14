@@ -45,11 +45,11 @@ module.exports = grammar({
       seq("(", $.expression, ")"),
       $.intconst,
       $.identifier,
-      $._unary_expression,
-      $._binary_expression,
+      $.unary_expression,
+      $.binary_expression,
     ),
-    _unary_expression: $ => prec(3, seq($.unop, $.expression)),
-    _binary_expression: $ => choice(
+    unary_expression: $ => prec(3, seq($.unop, $.expression)),
+    binary_expression: $ => choice(
       prec.left(1, seq($.expression, "+", $.expression)),
       prec.left(1, seq($.expression, "-", $.expression)),
 
@@ -70,10 +70,7 @@ module.exports = grammar({
     ),
     decnum: $ => choice(
       "0",
-      seq(
-        /[1-9]/,
-        repeat(/[0-9]/)
-      )
+      seq(/[1-9]/, repeat(/[0-9]/))
     ),
     hexnum: $ => seq("0", /[xX]/, repeat1(/[A-Fa-f0-9]/)),
     type: $ => "int",

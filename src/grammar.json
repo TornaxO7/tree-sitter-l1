@@ -202,15 +202,15 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_unary_expression"
+          "name": "unary_expression"
         },
         {
           "type": "SYMBOL",
-          "name": "_binary_expression"
+          "name": "binary_expression"
         }
       ]
     },
-    "_unary_expression": {
+    "unary_expression": {
       "type": "PREC",
       "value": 3,
       "content": {
@@ -227,7 +227,7 @@
         ]
       }
     },
-    "_binary_expression": {
+    "binary_expression": {
       "type": "CHOICE",
       "members": [
         {
