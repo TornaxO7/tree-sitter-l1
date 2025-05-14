@@ -24,15 +24,16 @@ module.exports = grammar({
 
     // `stmt`
     statement: $ => choice(
-      seq($.decl, ";"),
+      seq($.declaration, ";"),
       seq($.simp, ";"),
       seq("return", $.expression, ";"),
     ),
 
-    decl: $ => choice(
+    // `decl`
+    declaration: $ => choice(
       seq($.type, $.identifier, optional(seq("=", $.expression))),
     ),
-
+    
     simp: $ => seq($.lvalue, $.asnop, $.expression),
 
     lvalue: $ => choice(

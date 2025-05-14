@@ -1,0 +1,55 @@
+===
+Multiplication precedence
+===
+
+int main() {
+int x = 5;
+int y = 6;
+int z = 7;
+int r = z + x * y;
+return r;
+}
+
+---
+
+    (source_file
+      (program
+        (statement
+          (declaration
+            (type)
+            (identifier)
+            (expression
+              (intconst
+                (decnum)))))
+        (statement
+          (declaration
+            (type)
+            (identifier)
+            (expression
+              (intconst
+                (decnum)))))
+        (statement
+          (declaration
+            (type)
+            (identifier)
+            (expression
+              (intconst
+                (decnum)))))
+        (statement
+          (declaration
+            (type)
+            (identifier)
+            (expression
+              (binary_expression
+                (expression
+                  (identifier))
+                (expression
+                  (binary_expression
+                    (expression
+                      (identifier))
+                    (expression
+                      (identifier))))))))
+        (statement
+          (expression
+            (identifier)))))
+

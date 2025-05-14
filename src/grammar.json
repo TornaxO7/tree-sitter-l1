@@ -50,7 +50,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "decl"
+              "name": "declaration"
             },
             {
               "type": "STRING",
@@ -90,7 +90,7 @@
         }
       ]
     },
-    "decl": {
+    "declaration": {
       "type": "CHOICE",
       "members": [
         {

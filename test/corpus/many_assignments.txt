@@ -14,14 +14,14 @@ int main() {
 (source_file
 	(program
         (statement
-        	(decl
+        	(declaration
 		        (type)
             	(identifier)
           		(expression (intconst (decnum)))
 			)
 		)
     	(statement
-	    	(decl
+	    	(declaration
 	        	(type)
 	        	(identifier)
 				(expression
@@ -33,7 +33,7 @@ int main() {
 			)
 		)
     	(statement
-	    	(decl
+	    	(declaration
 	        	(type)
 	        	(identifier)
 				(expression

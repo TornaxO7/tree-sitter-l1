@@ -1,0 +1,37 @@
+===
+Arithmetic with parentheses
+===
+
+int main() {
+    int y = (5 * 2) - 3;
+    return y;
+}
+
+---
+
+(source_file
+	(program
+		(statement
+			(declaration
+				(type)
+				(identifier)
+				(expression
+					(binary_expression
+						(expression
+							(expression
+								(binary_expression
+									(expression (intconst (decnum)))
+									(expression (intconst (decnum)))
+								)
+							)
+						)
+						(expression (intconst (decnum)))
+					)
+				)
+			)
+		)
+		(statement
+			(expression (identifier))
+		)
+	)
+)
