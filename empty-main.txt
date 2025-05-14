@@ -1,0 +1,9 @@
+===
+Empty main
+===
+
+int main() {
+}
+
+---
+
