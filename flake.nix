@@ -2,6 +2,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
+
+    crow.url = "github:I-Al-Istannen/crow";
   };
 
   outputs = inputs@{ flake-parts, ... }:
@@ -18,7 +20,7 @@
               tree-sitter
               nodePackages_latest.nodejs
               just
-            ];
+            ] ++ [ inputs.crow.packages.${system}.client ];
           };
         };
       };
