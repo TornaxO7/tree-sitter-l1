@@ -24,9 +24,11 @@ int main() {
 	    	(decl
 	        	(type)
 	        	(identifier)
-	        	(expression
-		        	(expression (intconst (decnum)))
-		        	(expression (intconst (decnum)))
+				(expression
+		        	(binary_expression
+			        	(expression (intconst (decnum)))
+			        	(expression (intconst (decnum)))
+					)
 				)
 			)
 		)
@@ -34,9 +36,11 @@ int main() {
 	    	(decl
 	        	(type)
 	        	(identifier)
-	        	(expression
-		        	(expression (intconst (decnum)))
-		        	(expression (identifier))
+				(expression
+		        	(binary_expression
+			        	(expression (intconst (decnum)))
+			        	(expression (identifier))
+					)
 				)
 			)
 		)
