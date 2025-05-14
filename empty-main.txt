@@ -2,8 +2,5 @@
 Empty main
 ===
 
-int main() {
-}
-
 ---
 

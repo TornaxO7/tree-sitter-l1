@@ -13,37 +13,35 @@ int main() {
 
 (source_file
 	(program
-    	(statements
-	        (statement
-	        	(decl
-			        (type)
-	            	(identifier)
-              		(expression (intconst (decnum)))
+        (statement
+        	(decl
+		        (type)
+            	(identifier)
+          		(expression (intconst (decnum)))
+			)
+		)
+    	(statement
+	    	(decl
+	        	(type)
+	        	(identifier)
+	        	(expression
+		        	(expression (intconst (decnum)))
+		        	(expression (intconst (decnum)))
 				)
 			)
-	    	(statement
-		    	(decl
-		        	(type)
-		        	(identifier)
-		        	(expression
-			        	(expression (intconst (decnum)))
-			        	(expression (intconst (decnum)))
-					)
+		)
+    	(statement
+	    	(decl
+	        	(type)
+	        	(identifier)
+	        	(expression
+		        	(expression (intconst (decnum)))
+		        	(expression (identifier))
 				)
 			)
-	    	(statement
-		    	(decl
-		        	(type)
-		        	(identifier)
-		        	(expression
-			        	(expression (intconst (decnum)))
-			        	(expression (identifier))
-					)
-				)
-			)
-	    	(statement
-		    	(expression (intconst (decnum)))
-			)
+		)
+    	(statement
+	    	(expression (intconst (decnum)))
 		)
 	)
 )

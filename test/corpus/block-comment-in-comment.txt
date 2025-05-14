@@ -1,0 +1,19 @@
+===
+Block comment in comment
+===
+
+int main() {
+	// hello there /* general kenobi */
+	return 0;
+}
+
+---
+
+(source_file
+	(program
+		(line_comment)
+		(statement
+			(expression (intconst (decnum)))
+		)
+	)
+)

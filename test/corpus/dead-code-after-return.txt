@@ -1,0 +1,25 @@
+===
+Dead code after return
+===
+
+int main() {
+    return 0;
+    int x = 5;
+}
+
+---
+
+(source_file
+	(program
+    	(statement
+	        (expression (intconst (decnum)))
+		)
+		(statement
+			(decl
+				(type)
+				(identifier)
+				(expression (intconst (decnum)))
+			)
+		)
+	)
+)

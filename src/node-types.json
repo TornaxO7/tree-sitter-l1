@@ -5,6 +5,11 @@
     "fields": {}
   },
   {
+    "type": "block_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "decl",
     "named": true,
     "fields": {},
@@ -89,6 +94,11 @@
     }
   },
   {
+    "type": "line_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "lvalue",
     "named": true,
     "fields": {},
@@ -112,11 +122,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
-          "type": "statements",
+          "type": "statement",
           "named": true
         }
       ]
@@ -185,21 +195,6 @@
     }
   },
   {
-    "type": "statements",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "statement",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "type",
     "named": true,
     "fields": {}
@@ -230,6 +225,10 @@
     "named": false
   },
   {
+    "type": "*/",
+    "named": false
+  },
+  {
     "type": "*=",
     "named": false
   },
@@ -251,6 +250,14 @@
   },
   {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": "/*",
+    "named": false
+  },
+  {
+    "type": "//",
     "named": false
   },
   {

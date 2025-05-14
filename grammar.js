@@ -13,14 +13,14 @@ module.exports = grammar({
   rules: {
     // TODO: add the actual grammar rules
     source_file: $ => $.program,
+    // source_file: $ => "hello",
 
     program: $ => seq(
       "int", "main", "(", ")", "{",
-      optional($.statements),
+      // `statements`
+      repeat($.statement),
       "}"
     ),
-
-    statements: $ => repeat1($.statement),
 
     // `stmt`
     statement: $ => choice(
@@ -79,12 +79,15 @@ module.exports = grammar({
     type: $ => "int",
 
     comment: $ => choice(
-      $._line_comment,
-      $._block_comment,
+      $.line_comment,
+      $.block_comment,
     ),
-
-    _line_comment: $ => seq("//", repeat(choice(/.|\n|\r/))),
-    _block_comment: $ => seq("/*", $._block_comment_content, "*/"),
-    _block_comment_content: $ => repeat1(choice(/.|\n|\r/)),
-  }
+    line_comment: $ => seq("//", /[^\r\n]*/),
+    block_comment: $ => seq("/*", repeat(/[^("*/")]/), "*/"),
+  },
+  extras: $ => [
+    /\s/,
+    $.line_comment,
+    $.block_comment,
+  ]
 });
