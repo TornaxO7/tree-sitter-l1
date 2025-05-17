@@ -84,16 +84,6 @@
     }
   },
   {
-    "type": "hexnum",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "identifier",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "intconst",
     "named": true,
     "fields": {},
@@ -113,11 +103,6 @@
     }
   },
   {
-    "type": "line_comment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "lvalue",
     "named": true,
     "fields": {},
@@ -131,21 +116,6 @@
         },
         {
           "type": "lvalue",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "program",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "statement",
           "named": true
         }
       ]
@@ -180,11 +150,11 @@
     "root": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": true,
+      "multiple": true,
+      "required": false,
       "types": [
         {
-          "type": "program",
+          "type": "statement",
           "named": true
         }
       ]
@@ -295,10 +265,6 @@
     "named": false
   },
   {
-    "type": "//",
-    "named": false
-  },
-  {
     "type": "/=",
     "named": false
   },
@@ -315,8 +281,21 @@
     "named": false
   },
   {
+    "type": "hexnum",
+    "named": true
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
     "type": "int",
     "named": false
+  },
+  {
+    "type": "line_comment",
+    "named": true,
+    "extra": true
   },
   {
     "type": "main",

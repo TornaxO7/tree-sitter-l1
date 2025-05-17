@@ -10,28 +10,26 @@ int main() {
 ---
 
 (source_file
-	(program
-		(statement
-			(declaration
-				(type)
-				(identifier)
-				(expression
-					(binary_expression
+	(statement
+		(declaration
+			(type)
+			(identifier)
+			(expression
+				(binary_expression
+					(expression
 						(expression
-							(expression
-								(binary_expression
-									(expression (intconst (decnum)))
-									(expression (intconst (decnum)))
-								)
+							(binary_expression
+								(expression (intconst (decnum)))
+								(expression (intconst (decnum)))
 							)
 						)
-						(expression (intconst (decnum)))
 					)
+					(expression (intconst (decnum)))
 				)
 			)
 		)
-		(statement
-			(expression (identifier))
-		)
+	)
+	(statement
+		(expression (identifier))
 	)
 )

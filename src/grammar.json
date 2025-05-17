@@ -3,10 +3,6 @@
   "name": "l1",
   "rules": {
     "source_file": {
-      "type": "SYMBOL",
-      "name": "program"
-    },
-    "program": {
       "type": "SEQ",
       "members": [
         {
@@ -103,27 +99,27 @@
             {
               "type": "SYMBOL",
               "name": "identifier"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "type"
             },
             {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "="
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "expression"
-                    }
-                  ]
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "identifier"
+            },
+            {
+              "type": "STRING",
+              "value": "="
+            },
+            {
+              "type": "SYMBOL",
+              "name": "expression"
             }
           ]
         }
@@ -384,20 +380,8 @@
       ]
     },
     "identifier": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "PATTERN",
-          "value": "[A-Za-z_]"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "PATTERN",
-            "value": "[A-Za-z0-9_]"
-          }
-        }
-      ]
+      "type": "PATTERN",
+      "value": "[A-Za-z_][A-Za-z0-9_]*"
     },
     "decnum": {
       "type": "CHOICE",
@@ -407,42 +391,14 @@
           "value": "0"
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "PATTERN",
-              "value": "[1-9]"
-            },
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "PATTERN",
-                "value": "[0-9]"
-              }
-            }
-          ]
+          "type": "PATTERN",
+          "value": "[1-9][0-9]*"
         }
       ]
     },
     "hexnum": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "0"
-        },
-        {
-          "type": "PATTERN",
-          "value": "[xX]"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "PATTERN",
-            "value": "[A-Fa-f0-9]"
-          }
-        }
-      ]
+      "type": "STRING",
+      "value": "0[xX][A-Fa-f0-9]+"
     },
     "type": {
       "type": "STRING",
@@ -462,17 +418,8 @@
       ]
     },
     "line_comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "//"
-        },
-        {
-          "type": "PATTERN",
-          "value": "[^\\r\\n]*"
-        }
-      ]
+      "type": "PATTERN",
+      "value": "\\/\\/[^\\r\\n]*"
     },
     "block_comment": {
       "type": "SEQ",

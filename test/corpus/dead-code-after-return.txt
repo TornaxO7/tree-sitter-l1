@@ -10,16 +10,14 @@ int main() {
 ---
 
 (source_file
-	(program
-    	(statement
-	        (expression (intconst (decnum)))
-		)
-		(statement
-			(declaration
-				(type)
-				(identifier)
-				(expression (intconst (decnum)))
-			)
+	(statement
+        (expression (intconst (decnum)))
+	)
+	(statement
+		(declaration
+			(type)
+			(identifier)
+			(expression (intconst (decnum)))
 		)
 	)
 )

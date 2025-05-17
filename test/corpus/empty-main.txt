@@ -3,11 +3,8 @@ Empty main
 ===
 
 int main( ) {
-	
 }
 
 ---
 
-(source_file
-	(program)
-)
+(source_file)

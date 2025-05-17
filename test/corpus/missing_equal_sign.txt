@@ -1,0 +1,12 @@
+===
+Missing equal sign
+:error
+===
+
+int main() {
+	int a 10;
+	return a;
+}
+
+---
+

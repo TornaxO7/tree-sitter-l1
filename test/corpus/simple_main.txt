@@ -1,16 +1,14 @@
 ===
-Block comment in comment
+Simple main
 ===
 
 int main() {
-	// hello there /* general kenobi */
 	return 0;
 }
 
 ---
 
 (source_file
-	(line_comment)
 	(statement
 		(expression (intconst (decnum)))
 	)

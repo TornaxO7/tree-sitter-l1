@@ -9,13 +9,11 @@ return 1+1;
 ---
 
 (source_file
-	(program
-		(statement
-			(expression
-				(binary_expression
-					(expression (intconst (decnum)))
-					(expression (intconst (decnum)))
-				)
+	(statement
+		(expression
+			(binary_expression
+				(expression (intconst (decnum)))
+				(expression (intconst (decnum)))
 			)
 		)
 	)

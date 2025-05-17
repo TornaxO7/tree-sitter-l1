@@ -12,10 +12,7 @@ module.exports = grammar({
 
   rules: {
     // TODO: add the actual grammar rules
-    source_file: $ => $.program,
-    // source_file: $ => "hello",
-
-    program: $ => seq(
+    source_file: $ => seq(
       "int", "main", "(", ")", "{",
       // `statements`
       repeat($.statement),
@@ -31,7 +28,8 @@ module.exports = grammar({
 
     // `decl`
     declaration: $ => choice(
-      seq($.type, $.identifier, optional(seq("=", $.expression))),
+      seq($.type, $.identifier),
+      seq($.type, $.identifier, "=", $.expression),
     ),
     
     simp: $ => seq($.lvalue, $.asnop, $.expression),
@@ -65,22 +63,19 @@ module.exports = grammar({
     asnop: $ => choice("=", "+=", "-=", "*=", "/=", "%="),
 
     // `iden`
-    identifier: $ => seq(
-      /[A-Za-z_]/,
-      repeat(/[A-Za-z0-9_]/)
-    ),
+    identifier: $ => /[A-Za-z_][A-Za-z0-9_]*/,
     decnum: $ => choice(
       "0",
-      seq(/[1-9]/, repeat(/[0-9]/))
+      /[1-9][0-9]*/
     ),
-    hexnum: $ => seq("0", /[xX]/, repeat1(/[A-Fa-f0-9]/)),
+    hexnum: $ => "0[xX][A-Fa-f0-9]+",
     type: $ => "int",
 
     comment: $ => choice(
       $.line_comment,
       $.block_comment,
     ),
-    line_comment: $ => seq("//", /[^\r\n]*/),
+    line_comment: $ => /\/\/[^\r\n]*/,
     block_comment: $ => seq("/*", repeat(/[^("*/")]/), "*/"),
   },
   extras: $ => [
